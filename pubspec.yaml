@@ -16,6 +16,7 @@ dependencies:
  
 dependency_overrides:
   webview_flutter: 4.13.1
+  shared_preferences: 2.5.3
 
 dev_dependencies:
   flutter_test:
