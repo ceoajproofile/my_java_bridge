@@ -1,23 +1,20 @@
 package com.example.my_java_bridge
 
 import android.content.Context
-import com.onesignal.notifications.INotificationServiceExtension
-import com.onesignal.notifications.INotificationReceivedEvent
+import android.util.Log
+import com.onesignal.OSNotificationReceivedEvent
+import com.onesignal.OneSignal.OSNotificationServiceExtension
 
-class ExampleServiceExtension: INotificationServiceExtension {
-    
-    override fun onNotificationReceived(event: INotificationReceivedEvent) {
-        val notification = event.notification
-        val context = event.context
+class ExampleServiceExtension : OSNotificationServiceExtension {
+    override fun onNotificationReceived(notificationReceivedEvent: OSNotificationReceivedEvent) {
+        val notification = notificationReceivedEvent.notification
+        val context = notificationReceivedEvent.context
 
-        // DITO MO ILALAGAY ANG LOGIC PARA SA ALERT MODE
-        // Halimbawa: Kung ang notification title ay "URGENT JOB"
-        if (notification.title?.contains("URGENT", ignoreCase = true) == true) {
-            // Pwede kang mag-trigger ng vibration o custom sound dito
-        }
+        Log.i("OneSignalExample", "Notification received: ${notification.body}")
 
-        notification.actionButtons?.forEach { button ->
-            // Dito mo pwedeng i-modify ang "Accept" o "Decline" buttons ng job request
-        }
+        // Dito papasok yung logic para sa ProoFile Alert Mode
+        // Halimbawa: notificationReceivedEvent.complete(notification)
+        
+        notificationReceivedEvent.complete(notification)
     }
 }
