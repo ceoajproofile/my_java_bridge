@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.9.20' // This defines the missing property
+    ext.kotlin_version = '1.9.20' // This is the property the error is looking for
     repositories {
         google()
         mavenCentral()
