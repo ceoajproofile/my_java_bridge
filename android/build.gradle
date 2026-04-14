@@ -48,14 +48,11 @@ android {
 
 // DAPAT NASA LABAS ITO NG ANDROID BLOCK
 dependencies {
-    // Ang susi para sa OneSignal logic ng ProoFile
-    implementation "com.onesignal:OneSignal:[4.0.0, 4.99.99]"
+    // PALITAN MO ITO: Gawing 'api' imbes na 'implementation'
+    api "com.onesignal:OneSignal:[4.0.0, 4.99.99]"
     
-    // Para sa core Kotlin functions
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    
-    // Para sa Flutter communication
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compileOnly "io.flutter:flutter_embedding_debug:1.0.0-+"
-    
     testImplementation("org.jetbrains.kotlin:kotlin-test")
+
 }
