@@ -12,8 +12,8 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
   # Idagdag ito:
-  pop_overlay: ^4.13.0
-  webview_flutter: ^4.13.1
+  pop_overlay: ^4.3.0
+ 
 
 dev_dependencies:
   flutter_test:
