@@ -12,13 +12,8 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
   # Idagdag ito:
-  pop_overlay: 4.2.0
-  pop_overlay: ^5.0.0
-  # Do NOT put shared_preferences here
+  pop_overlay: ^4.2.0
 
-dependency_overrides:
-  shared_preferences: 2.5.3
-  webview_flutter: 4.13.0
 
 dev_dependencies:
   flutter_test:
