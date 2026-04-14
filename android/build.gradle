@@ -48,9 +48,8 @@ android {
 
 dependencies {
     // Change this from [4.0.0, 4.99.99] to [5.0.0, 5.99.99]
-    api "com.onesignal:OneSignal:[5.0.0, 5.1.26]" 
+    api "com.onesignal:OneSignal:[5.0.0, 5.99.99]"
     
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compileOnly "io.flutter:flutter_embedding_debug:1.0.0-+"
-    testImplementation "org.jetbrains.kotlin:kotlin-test"
 }
