@@ -1,1 +1,4 @@
-rootProject.name = 'my_java_bridge'
+rootProject.name = 'proo_f_ile' // Change this back!
+include ':app'
+include ':my_java_bridge' // Include the bridge as a sub-module
+project(':my_java_bridge').projectDir = new File('my_java_bridge')
