@@ -1,3 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.example.my_java_bridge">
+    package="com.example.my_java_bridge">
+
+    <application>
+
+        <meta-data
+            android:name="com.onesignal.NotificationServiceExtension"
+            android:value="com.example.my_java_bridge.ExampleServiceExtension" />
+
+    </application>
+
 </manifest>
