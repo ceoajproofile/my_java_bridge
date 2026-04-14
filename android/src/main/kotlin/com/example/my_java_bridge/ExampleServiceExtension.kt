@@ -1,20 +1,21 @@
 package com.example.my_java_bridge
 
-import android.content.Context
 import android.util.Log
-import com.onesignal.OSNotificationReceivedEvent
-import com.onesignal.OneSignal.OSNotificationServiceExtension
+import com.onesignal.INotificationReceivedEvent
+import com.onesignal.INotificationServiceExtension
 
-class ExampleServiceExtension : OSNotificationServiceExtension {
-    override fun onNotificationReceived(notificationReceivedEvent: OSNotificationReceivedEvent) {
-        val notification = notificationReceivedEvent.notification
-        val context = notificationReceivedEvent.context
+class ExampleServiceExtension : INotificationServiceExtension {
+    override fun onNotificationReceived(event: INotificationReceivedEvent) {
+        val notification = event.notification
+        val context = event.context
 
         Log.i("OneSignalExample", "Notification received: ${notification.body}")
 
-        // Dito papasok yung logic para sa ProoFile Alert Mode
-        // Halimbawa: notificationReceivedEvent.complete(notification)
-        
-        notificationReceivedEvent.complete(notification)
+        // Example:
+        // event.preventDefault()
+        // Do custom work here
+        // notification.display()
+
+        // Let the notification continue displaying normally
     }
 }
