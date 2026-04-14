@@ -2,14 +2,14 @@ group = "com.example.my_java_bridge"
 version = "1.0-SNAPSHOT"
 
 buildscript {
-    ext.kotlin_version = "2.1.0"
+    ext.kotlin_version = "1.9.20" // Standard version for better compatibility
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.9.1")
+        classpath("com.android.tools.build:gradle:8.1.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
@@ -27,7 +27,7 @@ apply plugin: "kotlin-android"
 android {
     namespace = "com.example.my_java_bridge"
 
-    compileSdk = 36
+    compileSdk = 34 // Stable version for Android 14
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -35,12 +35,11 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11
+        jvmTarget = "11"
     }
 
     sourceSets {
         main.java.srcDirs += "src/main/kotlin"
-        test.java.srcDirs += "src/test/kotlin"
     }
 
     defaultConfig {
@@ -48,19 +47,12 @@ android {
     }
 
     dependencies {
+        // ITO ANG PINAKA-IMPORTANTE: Para makilala ang OneSignal sa Kotlin
+        implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+        
+        // Flutter dependencies
+        compileOnly "io.flutter:flutter_embedding_debug:1.0.0-+"
+        
         testImplementation("org.jetbrains.kotlin:kotlin-test")
-        testImplementation("org.mockito:mockito-core:5.0.0")
-    }
-
-    testOptions {
-        unitTests.all {
-            useJUnitPlatform()
-
-            testLogging {
-               events "passed", "skipped", "failed", "standardOut", "standardError"
-               outputs.upToDateWhen {false}
-               showStandardStreams = true
-            }
-        }
     }
 }
