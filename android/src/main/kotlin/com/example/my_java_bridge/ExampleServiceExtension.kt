@@ -7,20 +7,10 @@ import com.onesignal.notifications.INotificationServiceExtension
 class ExampleServiceExtension : INotificationServiceExtension {
 
     override fun onNotificationReceived(event: INotificationReceivedEvent) {
-
-        // Get notification data
         val notification = event.notification
 
-        // Log for debugging
-        Log.i(
-            "OneSignalExt",
-            "Notification received: ${notification.title} - ${notification.body}"
-        )
+        Log.i("OneSignalExt", "Notification received: ${notification.body}")
 
-        // OPTIONAL: modify notification data here later
-
-        // IMPORTANT:
-        // By default, OneSignal will still show notification automatically.
-        // So we are NOT blocking it yet.
+        // DO NOTHING FOR NOW (STAGE 2 = TEST ONLY)
     }
 }
