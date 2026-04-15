@@ -1,43 +1,31 @@
+group 'com.example.my_java_bridge'
+version '1.0-SNAPSHOT'
+
 buildscript {
-    // Your current Kotlin version
-    ext.kotlin_version = '1.9.20' 
-    
+    ext.kotlin_version = '1.9.20'
     repositories {
         google()
         mavenCentral()
     }
-
     dependencies {
-        // Standard Android build tools for Gradle 8.1.0
         classpath 'com.android.tools.build:gradle:8.1.0'
-        
-        // Kotlin plugin using the property defined above
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        
-        // Updated Google Services for FCM/Firebase (v5 compatibility)
-        classpath 'com.google.gms:google-services:4.4.0' 
-
-        // CRITICAL: Updated OneSignal plugin for the v5 SDK.
-        // 0.12.10 was for v4; 0.14.0+ is required for v5.
-        classpath 'com.onesignal:onesignal-gradle-plugin:0.14.0'
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace "com.example.my_java_bridge"
+    compileSdkVersion 34
+    // ... rest of your config
 }
 
-rootProject.buildDir = '../build'
-subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(':app')
-}
-
-tasks.register("clean", Delete) {
-    delete rootProject.buildDir
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    
+    // 🔥 ETO ANG PINAKAMAHALAGA! 
+    // Kapag wala ito dito, hindi maiintindihan ng Kotlin file mo yung "onesignal"
+    implementation 'com.onesignal:OneSignal:[5.0.0, 5.99.99]'
 }
