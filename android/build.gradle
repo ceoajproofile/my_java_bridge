@@ -5,10 +5,13 @@ buildscript {
         mavenCentral()
     }
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
+   dependencies {
+    classpath 'com.android.tools.build:gradle:8.1.0'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    // ADD THIS LINE
+    classpath 'com.google.gms:google-services:4.3.15' 
+    classpath 'com.onesignal:onesignal-gradle-plugin:0.12.10'
+}
 }
 
 allprojects {
