@@ -24,8 +24,7 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    
+    implementation 'com.onesignal:OneSignal:5.1.6'
     // 🔥 ETO ANG PINAKAMAHALAGA! 
     // Kapag wala ito dito, hindi maiintindihan ng Kotlin file mo yung "onesignal"
-    implementation 'com.onesignal:OneSignal:[5.0.0, 5.99.99]'
 }
