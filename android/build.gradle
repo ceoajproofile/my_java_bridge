@@ -18,13 +18,19 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace "com.example.my_java_bridge"
-    compileSdkVersion 34
-    // ... rest of your config
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.onesignal:OneSignal:5.1.6'
-    // 🔥 ETO ANG PINAKAMAHALAGA! 
-    // Kapag wala ito dito, hindi maiintindihan ng Kotlin file mo yung "onesignal"
 }
