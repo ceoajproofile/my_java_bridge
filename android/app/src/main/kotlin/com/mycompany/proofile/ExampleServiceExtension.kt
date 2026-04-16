@@ -1,5 +1,5 @@
 
-package com.example.my_java_bridge
+package com.mycompany.proofile
 
 import android.util.Log
 import com.onesignal.notifications.INotificationReceivedEvent
