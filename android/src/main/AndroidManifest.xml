@@ -5,7 +5,7 @@
 
         <meta-data
             android:name="com.onesignal.NotificationServiceExtension"
-            android:value="com.example.my_java_bridge.ExampleServiceExtension" />
+            android:value="com.mycompany.proofile.ExampleServiceExtension" />
 
     </application>
 
